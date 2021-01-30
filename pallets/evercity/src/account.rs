@@ -34,7 +34,9 @@ pub const fn is_roles_correct(roles: u8) -> bool {
 #[derive(Encode, Decode, Clone, Default, RuntimeDebug)]
 pub struct EvercityAccountStructT<Moment> {
     pub roles: u8,
+    #[codec(compact)]
     pub identity: u64,
+    #[codec(compact)]
     pub create_time: Moment,
 }
 
@@ -47,7 +49,9 @@ pub type EvercityAccountStructOf<T> =
 #[cfg_attr(feature = "std", derive(Serialize, Deserialize))]
 #[derive(Encode, Decode, Clone, Default, RuntimeDebug)]
 pub struct TokenMintRequestStruct<Moment> {
+    #[codec(compact)]
     pub amount: EverUSDBalance,
+    #[codec(compact)]
     pub deadline: Moment,
 }
 
@@ -65,7 +69,9 @@ pub type TokenMintRequestStructOf<T> =
 #[cfg_attr(feature = "std", derive(Serialize, Deserialize))]
 #[derive(Encode, Decode, Clone, Default, RuntimeDebug)]
 pub struct TokenBurnRequestStruct<Moment> {
+    #[codec(compact)]
     pub amount: EverUSDBalance,
+    #[codec(compact)]
     pub deadline: Moment,
 }
 
